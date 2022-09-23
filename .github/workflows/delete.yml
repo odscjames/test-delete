@@ -9,6 +9,8 @@ jobs:
       - name: Clean up
         run: |
           echo "Clean up for branch ${{ github.event.ref }}"
+      - name: LS
+        run: ls -al
       - name: Git log
         run: git log
       - name: Git show
