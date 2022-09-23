@@ -1,0 +1,16 @@
+name: Test
+on: [delete]
+
+jobs:
+  delete:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up
+        run: |
+          echo "Clean up for branch ${{ github.event.ref }}"
+      - name: Git log
+        run: git log
+      - name: Git show
+        run: git show
+
